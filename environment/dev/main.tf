@@ -7,6 +7,8 @@ module "rg" {
 }
 
 module "stg" {
+    depends_on = [ module.rg ]
+    
   source = "../../modules/storage_account"
   storage_account = {
     name                     = "devstg1"
